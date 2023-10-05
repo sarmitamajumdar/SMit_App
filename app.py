@@ -5,6 +5,7 @@ import numpy as np
 from io import BytesIO
 from PIL import Image
 import tensorflow as tf
+
 import nest_asyncio
 
 nest_asyncio.apply()
@@ -24,7 +25,7 @@ app.add_middleware(
 )
 
 MODEL = tf.keras.models.load_model(
-    r"/Users/Sarmita Majumdar/Desktop/SMit_App/WebApp-Diabetic-Retino/models_epoch/model00000002-0.9092040061950684.h5")
+    r"/Users/Sarmita Majumdar/Desktop/SMit_App/model00000002-0.9092040061950684.h5")
 
 CLASS_NAMES = ["DR", "No_DR"]
 
@@ -56,5 +57,8 @@ async def predict(
     }
 
 
+import os
 if __name__ == "__main__":
     uvicorn.run(app, host='localhost', port=8888)
+
+
