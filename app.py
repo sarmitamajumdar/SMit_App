@@ -1,3 +1,10 @@
+#!/usr/bin/env python
+# coding: utf-8
+# %%
+
+# %%
+
+import os
 import workflow
 
 from fastapi import FastAPI, File, UploadFile
@@ -59,9 +66,8 @@ async def predict(
         'confidence': float(confidence)
     }
 
-
-import os
 if __name__ == "__main__":
     uvicorn.run(app, host='localhost', port=8888)
 
 
+# %%
